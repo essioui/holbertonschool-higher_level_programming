@@ -1,3 +1,5 @@
 #!/usr/bin/python3
+char =""
 for alphabet in range(97, 123):
-    print("{:c}".format(alphabet))
+    char += "{:c}".format(alphabet) # you can use .format(alph),end=""
+print(char)
