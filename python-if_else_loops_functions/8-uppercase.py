@@ -8,4 +8,3 @@ def uppercase(str):
             # chr() function transfer number to letter & -32 for uppercase
         print("{}".format(i), end="")
     print("")
-    
