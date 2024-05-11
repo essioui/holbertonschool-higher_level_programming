@@ -6,4 +6,3 @@ for i in range(122, 64, -1):
     else :
         alphabet += chr(i).upper()
 print(alphabet, end="")
-
