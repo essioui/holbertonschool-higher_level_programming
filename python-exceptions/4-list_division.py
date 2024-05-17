@@ -8,12 +8,12 @@ def list_division(my_list_1, my_list_2, list_length):
                 num1 = my_list_1[i]
             except IndexError:
                 num1 = None
-                
+
             try:
                 num2 = my_list_2[i]
             except IndexError:
                 num2 = None
-                
+
             if num1 is None or num2 is None:
                 print("out of range")
                 result.append(0)
@@ -25,8 +25,8 @@ def list_division(my_list_1, my_list_2, list_length):
                 result.append(0)
             else:
                 result.append(num1 / num2)
-                
+
             i += 1
-            
+
     finally:
         return result
