@@ -16,6 +16,20 @@ class Square:
 
     @size.setter
     def size(self, value):
+        """__init__
+
+        The size setter method update the size value of the square.
+
+        Attributes:
+            size (:obj:`int`): The new size of the square.
+
+        Raises:
+            TypeError: If `size` type is not `int`.
+
+            ValueError: If `size` is less than `0`.
+
+        """
+        
         if not isinstance(value, int):
             raise TypeError("size must be an integer")
         if value < 0:
