@@ -42,22 +42,3 @@ class Square:
         # Print the square rows with the horizontal offset
         for _ in range(self.size):
             print(" " * self.position[0] + "#" * self.size)
-
-
-#!/usr/bin/python3
-Square = __import__("6-square").Square
-
-my_square_1 = Square(3)
-my_square_1.my_print()
-
-print("--")
-
-my_square_2 = Square(3, (1, 1))
-my_square_2.my_print()
-
-print("--")
-
-my_square_3 = Square(3, (3, 0))
-my_square_3.my_print()
-
-print("--")
