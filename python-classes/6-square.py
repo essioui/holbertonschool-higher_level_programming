@@ -5,7 +5,7 @@ class Square:
     A Square Class
 
     """
-
+        
     def __init__(self, size=0, position=(0, 0)):
         """Initialize a new square."""
         self.size = size
@@ -25,28 +25,22 @@ class Square:
         return self.__position
 
     def position(self, value):
-        '''Sets position attribute'''
-        if len(value) < 2:
-            raise TypeError('position must be a tuple of 2 positive integers')
-        if not isinstance(value[0], int) or value[0] < 0:
-            raise TypeError('position must be a tuple of 2 positive integers')
-        if not isinstance(value[1], int) or value[1] < 0:
-            raise TypeError('position must be a tuple of 2 positive integers')
-        self.__position = value
+        if not (
+            isinstance(value, tuple)
+            and len(value) == 2
+            and all(isinstance(i, int) and i >= 0 for i in value)
+        ):
+            raise TypeError("position must be a tuple of 2 positive integers")
+        self.position = value
 
     def area(self):
         return self.__size * self.__size
 
     def my_print(self):
-        '''Prints stdout square with character #'''
-        if self.__size > 0:
-            for i in range(self.__position[1]):
-                print()
-            for i in range(self.__size):
-                for blanks in range(self.__position[0]):
-                    print(' ', end='')
-                for j in range(self.__size):
-                    print('#', end='')
-                print()
-        else:
+        if self.size == 0:
             print()
+            return None
+        for _ in range(self.position[1]):
+            print()
+        for _ in range(self.size):
+            print(" " * self.position[0] + "#" * self.size)
