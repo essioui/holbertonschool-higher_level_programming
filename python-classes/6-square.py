@@ -35,6 +35,9 @@ class Square:
         self.position = value
 
     def area(self):
+        """
+        Returns the current square area
+        """
         return self.__size * self.__size
 
     def my_print(self):
