@@ -48,3 +48,8 @@ test add integer and complex:
     >>> add_integer(5, 6j)
     Traceback (most recent call last):
     TypeError: b must be an integer
+
+tets nan No a Number:
+    >>> add_integer(float('NaN'), -2)
+    Traceback (most recent call last):
+    ValueError: cannot convert float NaN to integer
