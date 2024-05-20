@@ -1,0 +1,50 @@
+Module integer add
+==================
+Usage
+-----
+
+import function from Module:
+    >>> add_integer = __import__('0-add_integer').add_integer
+
+test one integer argument:
+    >>> add_integer(2)
+    100
+
+
+test one float argument:
+    >>> add_integer(2.5)
+    100
+
+test one integer negatif number:
+    >>> add_integer(-8)
+    90
+
+test one negatif float:
+    >>> add_integer(-7.9)
+    91
+
+The second argument is optional - by default, it is 98.
+
+
+test two integer numbers:
+    >>> add_integer(1000000, 999999)
+    1999999
+
+
+not int or float
+================
+
+
+test two argument:
+    >>> add_integer(500, -300)
+    200
+
+test to add string:
+    >>> add_integer("hello", 10)
+    Traceback (most recent call last):
+    TypeError: a must be an integer
+
+test add integer and complex:
+    >>> add_integer(5, 6j)
+    Traceback (most recent call last):
+    TypeError: b must be an integer
