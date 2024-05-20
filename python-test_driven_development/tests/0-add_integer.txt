@@ -53,3 +53,8 @@ tets nan No a Number:
     >>> add_integer(float('NaN'), -2)
     Traceback (most recent call last):
     ValueError: cannot convert float NaN to integer
+
+test number infinity:
+    >>> add_integer(float('inf'), -2)
+    Traceback (most recent call last):
+    OverflowError: cannot convert float infinity to 
