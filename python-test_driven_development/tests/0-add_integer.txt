@@ -57,4 +57,4 @@ tets nan No a Number:
 test number infinity:
     >>> add_integer(float('inf'), -2)
     Traceback (most recent call last):
-    OverflowError: cannot convert float infinity to 
+    OverflowError: cannot convert float infinity to integer
