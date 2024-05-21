@@ -21,7 +21,7 @@ def text_indentation(text):
     for line in text:
         result = ''.join(line.strip())
         result = result.strip()
-        print(result, end="\n")
+        print(result)
 
 
 if __name__ == "__main__":
