@@ -46,3 +46,12 @@ TypeError: text must be a string
 test empty str:
 >>> text_indentation("")
 <BLANKLINE>
+
+test holberton:
+>>> text_indentation("holberton School")
+holberton School
+
+test holberton:
+>>> text_indentation("holberton.School")
+holberton
+School
