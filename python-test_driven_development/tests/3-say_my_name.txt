@@ -1,0 +1,20 @@
+Print first name and last name.
+===============================
+
+This module definie a funcion say_my_name(first_name, last_name)
+
+
+Usage:
+------
+
+import funcion from module:
+>>> say_my_name = __import__('3-say_my_name').say_my_name
+
+test two strings:
+>>> say_my_name("Salah", "Sioui")
+My name is Salah Sioui
+
+test integer and string:
+>>> say_my_name(17, "John")
+Traceback (most recent call last):
+TypeError: first_name must be a string
