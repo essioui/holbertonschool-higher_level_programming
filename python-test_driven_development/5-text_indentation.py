@@ -20,7 +20,8 @@ def text_indentation(text):
     text = text.split('.')
     for line in text:
         result = ''.join(line.strip())
-        print(result.strip())
+        result = result.strip()
+        print(result, end="\n")
 
 
 if __name__ == "__main__":
