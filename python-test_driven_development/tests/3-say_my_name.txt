@@ -14,7 +14,24 @@ test two strings:
 >>> say_my_name("Salah", "Sioui")
 My name is Salah Sioui
 
+test first name:
+>>> say_my_name("Bob")
+My name is Bob
+
 test integer and string:
 >>> say_my_name(17, "John")
 Traceback (most recent call last):
 TypeError: first_name must be a string
+
+test integer and string:
+>>> say_my_name("John", 17)
+Traceback (most recent call last):
+TypeError: last_name must be a string
+
+test string and integer:
+>>> say_my_name("John", 17)
+Traceback (most recent call last):
+TypeError: last_name must be a string
+
+
+
