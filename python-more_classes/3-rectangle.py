@@ -51,7 +51,7 @@ class Rectangle:
             return 0
         else:
             return 2 * (self._width + self._height)
-        
+
     def __str__(self):
         """
         Represent the rectangle by #
