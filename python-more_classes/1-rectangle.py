@@ -16,12 +16,8 @@ class Rectangle:
         width (int): must be a integer positif
         height (int): must be a integer positif
         """
-        try:
-            self.width = width
-            self.height = height
-        except (TypeError, ValueError) as e:
-            print("[{}] {}".format(e.__class__.__name__, e))
-            raise
+        self.width = width
+        self.height = height
 
     def width(self):
         return (self.__width)
@@ -42,7 +38,6 @@ class Rectangle:
         if value < 0:
             raise ValueError("height must be >= 0")
         self.__height = value
-
 
 
 
