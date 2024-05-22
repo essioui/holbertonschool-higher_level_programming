@@ -17,11 +17,11 @@ class Rectangle:
     ValueError: height must be >= 0
     """
     def __init__(self, width=0, height=0):
-        self.width = width
-        self.height = height
+        self.__width = width
+        self.__height = height
 
     def width(self):
-        return (self.width)
+        return (self.__width)
     
     def width(self, value):
         if not isinstance(value, int):
@@ -31,7 +31,7 @@ class Rectangle:
         self.__width = value
         
     def height(self):
-        return (self.height)
+        return (self.__height)
     
     def height(self, value):
         if not isinstance(value, int):
@@ -39,4 +39,3 @@ class Rectangle:
         if value < 0:
             raise ValueError("height must be >= 0")
         self.__height = value
-
