@@ -67,7 +67,7 @@ class Rectangle:
         return a string representation of the rectangle \
         to be able to recreate a new instance by using eval()
         """
-        return f"Rectangle({self._width}, {self._height})"
+        return (f"Rectangle({self._width}, {self._height})")
 
 #!/usr/bin/python3
 Rectangle = __import__('4-rectangle').Rectangle
