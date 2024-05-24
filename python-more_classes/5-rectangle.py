@@ -120,6 +120,25 @@ class Rectangle:
         to be able to recreate a new instance by using eval().
         """
         return (f"Rectangle({self.__width}, {self.__height})")
-    
+
     def __del__(self):
-        return ("Bye rectangle...")
+        print("Bye rectangle...")
+
+
+my_rectangle = Rectangle(2, 4)
+print("Area: {} - Perimeter: {}".format(my_rectangle.area(), my_rectangle.perimeter()))
+
+del my_rectangle
+ 
+#!/usr/bin/python3
+Rectangle = __import__('5-rectangle').Rectangle
+
+my_rectangle = Rectangle(2, 4)
+print("Area: {} - Perimeter: {}".format(my_rectangle.area(), my_rectangle.perimeter()))
+
+del my_rectangle
+
+try:
+    print(my_rectangle)
+except Exception as e:
+    print("[{}] {}".format(e.__class__.__name__, e))
