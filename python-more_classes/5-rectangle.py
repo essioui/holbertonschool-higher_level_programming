@@ -10,8 +10,8 @@ class Rectangle:
     ...
 
     Attributes:
-        width (int): width of the rectangle)
-        height (int): height of the rectangle
+        width (int): width of the rectangle (default is 0)
+        height (int): height of the rectangle (default is 0)
 
     Methods:
         width(): Gets the width of the rectangle
@@ -22,15 +22,16 @@ class Rectangle:
         perimeter(): return the perimeter of the rectangle
         __str__(): Prints the rectangle with the character #
         __repr__(): Returns a string representation to recreate a new instance
+        __del__(): Prints a message when an instance is deleted
     """
 
     def __init__(self, width=0, height=0):
         """
-        Constructs all the necessary attributes for the rectangle object.
+        Constructs all attributes for the rectangle object.
 
         Args:
             width (int, optional): Width of the rectangle
-            height (int, optional): Height of the rectangle
+            height (int, optional): Height of the rectangle0)
         """
         self.width = width
         self.height = height
@@ -48,12 +49,12 @@ class Rectangle:
         Sets the width of the rectangle.
 
         Args:
-
+ 
         value (int): Width of the rectangle
 
-        Raises:
+        Raises
 
-        TypeError:  width is not an integer
+        TypeError: If width is not an integer
         ValueError: If width is less than 0
         """
         if not isinstance(value, int):
@@ -75,7 +76,8 @@ class Rectangle:
         Sets the height of the rectangle.
 
         Args:
-        value (int):  Height of the rectangle
+
+        value (int): Height of the rectangle
 
         Raises
 
@@ -103,9 +105,6 @@ class Rectangle:
         return 2 * (self.__width + self.__height)
 
     def __str__(self):
-        """
-        Returns the string representation of the rectangle.
-        """
         if self.__width == 0 or self.__height == 0:
             return ""
 
@@ -115,30 +114,7 @@ class Rectangle:
         return "\n".join(rectangle_str)
 
     def __repr__(self):
-        """
-        Returns a string representation of the rectangle \
-        to be able to recreate a new instance by using eval().
-        """
-        return (f"Rectangle({self.__width}, {self.__height})")
+        return f"Rectangle({self.__width}, {self.__height})"
 
     def __del__(self):
         print("Bye rectangle...")
-
-
-my_rectangle = Rectangle(2, 4)
-print("Area: {} - Perimeter: {}".format(my_rectangle.area(), my_rectangle.perimeter()))
-
-del my_rectangle
- 
-#!/usr/bin/python3
-Rectangle = __import__('5-rectangle').Rectangle
-
-my_rectangle = Rectangle(2, 4)
-print("Area: {} - Perimeter: {}".format(my_rectangle.area(), my_rectangle.perimeter()))
-
-del my_rectangle
-
-try:
-    print(my_rectangle)
-except Exception as e:
-    print("[{}] {}".format(e.__class__.__name__, e))
