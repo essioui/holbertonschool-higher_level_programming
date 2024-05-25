@@ -4,15 +4,14 @@ This module defines a class Rectangle.
 """
 
 
-
 class Rectangle:
     """
     A class used to represent a Rectangle.
     ...
 
     Attributes:
-        width (int): width of the rectangle (default is 0)
-        height (int): height of the rectangle (default is 0)
+        width (int): width of the rectangle
+        height (int): height of the rectangle
 
     Methods:
         width(): Gets the width of the rectangle
@@ -23,7 +22,6 @@ class Rectangle:
         perimeter(): return the perimeter of the rectangle
         __str__(): Prints the rectangle with the character #
         __repr__(): Returns a string representation to recreate a new instance
-        __del__(): Prints a message when an instance is deleted
     """
     number_of_instances = 0
 
@@ -31,12 +29,13 @@ class Rectangle:
         """
         Constructs all attributes for the rectangle object.
 
-        Args:
+        Parameters:
             width (int, optional): Width of the rectangle
-            height (int, optional): Height of the rectangle0)
+            height (int, optional): Height of the rectangle)
         """
         self.width = width
         self.height = height
+        Rectangle.number_of_instances += 1
 
     @property
     def width(self):
@@ -50,11 +49,11 @@ class Rectangle:
         """
         Sets the width of the rectangle.
 
-        Args:
+        Parameters:
 
         value (int): Width of the rectangle
 
-        Raises
+        Raises:
 
         TypeError: If width is not an integer
         ValueError: If width is less than 0
@@ -77,7 +76,7 @@ class Rectangle:
         """
         Sets the height of the rectangle.
 
-        Args:
+        Parameters:
 
         value (int): Height of the rectangle
 
