@@ -49,7 +49,7 @@ class Rectangle:
         Sets the width of the rectangle.
 
         Args:
- 
+
         value (int): Width of the rectangle
 
         Raises
