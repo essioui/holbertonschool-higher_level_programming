@@ -1,67 +1,94 @@
-Module prints a text with 2 new lines after each of these characters: ., ? and :
-================================================================================
-
-Usage:
-------
-
-import funcion from module:
->>> text_indentation = __import__('5-text_indentation').text_indentation
-
-test str with three dots:
->>> text_indentation("""hello. world? with...programming""")
-hello.
-<BLANKLINE>
-world?
-<BLANKLINE>
-with.
-<BLANKLINE>
-.
-<BLANKLINE>
-.
-<BLANKLINE>
-programming
-
-test all str is dots:
->>> text_indentation("...")
-.
-<BLANKLINE>
-.
-<BLANKLINE>
-.
-<BLANKLINE>
-
-test ?:
->>> text_indentation("hello? are you: here")
-hello?
-<BLANKLINE>
-are you:
-<BLANKLINE>
-here
-
-test if not str:
->>> text_indentation(3)
-Traceback (most recent call last):
-TypeError: text must be a string
-
-test text not have any:
->>> text_indentation("hello world from python")
-hello world from python
-
-test None:
->>> text_indentation(None)
-Traceback (most recent call last):
-TypeError: text must be a string
-
-test empty str:
->>> text_indentation("")
+# 5-text_indentation.txt
 
 
-test holberton:
->>> text_indentation("holberton School")
-holberton School
+How to Use 5-text_indentation.py
+================================
 
-test holberton:
->>> text_indentation("holberton.School")
-holberton.
-<BLANKLINE>
-School
+
+Usage
+=====
+
+
+    >>> text_indentation = __import__('5-text_indentation').text_indentation
+    >>> text_indentation("Hello?")
+    Hello?
+    <BLANKLINE>
+
+No spaces are printed at the beginning of a line.
+
+::
+
+    >>> text_indentation("   Hi there.")
+    Hi there.
+    <BLANKLINE>
+
+::
+
+    >>> text_indentation("          ")
+
+Similarly, no spaces are printed at the end of each printed line.
+
+::
+
+    >>> text_indentation("Hello.   ")
+    Hello.
+    <BLANKLINE>
+
+::
+
+    >>> text_indentation("    Woah now.    This is messy.   ")
+    Woah now.
+    <BLANKLINE>
+    This is messy.
+    <BLANKLINE>
+
+
+
+    >>> text_indentation("No ending period, what bad grammar")
+    No ending period, what bad grammar
+
+New lines within a string are printed as normal.
+
+::
+
+    >>> text_indentation("Let's print a new-line! Here goes:\nPrinted.")
+    Let's print a new-line! Here goes:
+    <BLANKLINE>
+    <BLANKLINE>
+    Printed.
+    <BLANKLINE>
+
+::
+
+    >>> text_indentation("\n\n\n We just printed three new lines.")
+    <BLANKLINE>
+    <BLANKLINE>
+    <BLANKLINE>
+    We just printed three new lines.
+    <BLANKLINE>
+
+::
+    >>> text_indentation("A sneaky \n new line.")
+    A sneaky 
+    new line.
+    <BLANKLINE>
+
+The paramter ``text`` must be a string. Otherwise, a TypeError is raised.
+
+::
+
+    >>> text_indentation(7)
+    Traceback (most recent call last):
+    TypeError: text must be a string
+
+::
+
+    >>> text_indentation({"one": 1, "two": 2})
+    Traceback (most recent call last):
+    TypeError: text must be a string
+
+::
+
+    >>> text_indentation(None)
+    Traceback (most recent call last):
+    TypeError: text must be a string
