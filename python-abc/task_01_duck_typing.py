@@ -25,7 +25,8 @@ class Circle(Shape):
     """
 
     def __init__(self, radius):
-        self.radius = radius
+        if type(radius) is int:
+            self.radius = radius
 
     def area(self):
         return math.pi * self.radius ** 2
