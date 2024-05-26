@@ -3,11 +3,13 @@
 from abc import ABC, abstractmethod
 import math
 
+
 class Shape(ABC):
     """
     shape have two methods area and perimeter \
     inherit from class shape.
     """
+
     @abstractmethod
     def area(self):
         pass
@@ -16,10 +18,12 @@ class Shape(ABC):
     def perimeter(self):
         pass
 
+
 class Circle(Shape):
     """
     circle inherit from shape and calcul radius
     """
+
     def __init__(self, radius):
         self.radius = radius
 
@@ -29,10 +33,12 @@ class Circle(Shape):
     def perimeter(self):
         return 2 * math.pi * self.radius
 
+
 class Rectangle(Shape):
     """
     rectangle inherit from shape define width and height
     """
+
     def __init__(self, width, height):
         self.width = width
         self.height = height
@@ -43,12 +49,14 @@ class Rectangle(Shape):
     def perimeter(self):
         return 2 * (self.width + self.height)
 
+
 def shape_info(shape):
     """
     print area and perimeter
     """
     print(f"Area: {shape.area()}")
     print(f"Perimeter: {shape.perimeter()}")
+
 
 if __name__ == "__main__":
     # Instantiation a Circle and a Rectangle
