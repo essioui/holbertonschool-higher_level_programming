@@ -32,8 +32,10 @@ test all str is dots:
 
 test ?:
 >>> text_indentation("hello? are you: here")
-hello
-are you
+hello?
+<BLANKLINE>
+are you:
+<BLANKLINE>
 here
 
 test if not str:
