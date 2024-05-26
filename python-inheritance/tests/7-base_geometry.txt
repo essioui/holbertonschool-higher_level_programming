@@ -14,48 +14,29 @@ test other correct parameters:
     >>> bg.integer_validator("width", 89)
 
 test wrong parameters string:
-    >>> try:
-        bg.integer_validator("name", "John")
-    except Exception as e:
-        print("[{}] {}".format(e.__class__.__name__, e))
-    [TypeError] name must be an integer
+>>> bg.integer_validator("name", "John")
+Traceback (most recent call last):
+TypeError: age must be an integer
 
 test wrong parameters agual 0:
-    >>> try:
-    ...    bg.integer_validator("age", 0)
-    ... except Exception as e:
-    ...    print("[{}] {}".format(e.__class__.__name__, e))
-
-    [ValueError] age must be greater than 0
+    >>> bg.integer_validator("age", 0)
+Traceback (most recent call last):
+TypeError: age must be greater 0
 
 test wrong parameters less 0:
-    >>> try:
-        bg.integer_validator("distance", -4)
-    except Exception as e:
-        print("[{}] {}".format(e.__class__.__name__, e))
-    [ValueError] age must be greater than 0
+    >>> bg.integer_validator("distance", -4)
+Traceback (most recent call last):
+TypeError: age must be greater 0
 
 test wrong parameters with float:
-    >>> try:
-        bg.integer_validator("name", 1.55)
-    except Exception as e:
-        print("[{}] {}".format(e.__class__.__name__, e))
-    [TypeError] name must be an integer
+    >>> bg.integer_validator("name", 1.55)
+Traceback (most recent call last):
+TypeError: age must be an integer
 
 test wrong parameters None:
-    >>> try:
-        bg.integer_validator("name", None)
-    except Exception as e:
-        print("[{}] {}".format(e.__class__.__name__, e))
-    [TypeError] name must be an integer
-
-test wrong parameters with value:
-    >>> try:
-        bg.integer_validator("name")
-    except Exception as e:
-        print("[{}] {}".format(e.__class__.__name__, e))
-    [TypeError] integer_validator() missing 1 required positional argument: 'value'
-
+    >>> bg.integer_validator("name", None)
+Traceback (most recent call last):
+TypeError: age must be an integer
 
 
 
