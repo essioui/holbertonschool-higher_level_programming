@@ -25,9 +25,10 @@ class Circle(Shape):
     """
 
     def __init__(self, radius):
-        if type(radius) is int:
-            self.radius = radius
-
+        if isinstance(radius, (int, float)):
+            self.radius = abs(radius)  # Ensure the radius is always positive
+        else:
+            raise TypeError("Radius must be a number")
     def area(self):
         return math.pi * self.radius ** 2
 
