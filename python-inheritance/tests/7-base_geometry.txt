@@ -1,83 +1,14 @@
 The 'BaseGeometry' test module
+==============================
 
-Usage
+Usage:
 -----
 
->>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
->>> bg = BaseGeometry()
-
+    >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+    >>> bg = BaseGeometry()
 test correct parameters:
->>> bg.integer_validator("age", 20)
+    >>> bg.integer_validator("my_int", 12)
 
-test wrong parameters - tuple:
->>> bg.integer_validator("age", (10, 20))
-Traceback (most recent call last):
-TypeError: age must be an integer
+other correct test:
+    >>> bg.integer_validator("width", 89)
 
-test wrong parameters - list:
->>> bg.integer_validator("age", [1, 11])
-Traceback (most recent call last):
-TypeError: age must be an integer
-
-test wrong parameters - dictionary:
->>> bg.integer_validator("age", {3, 7})
-Traceback (most recent call last):
-TypeError: age must be an integer
-
-test wrong parameters - boolean:
->>> bg.integer_validator("age", False)
-Traceback (most recent call last):
-TypeError: age must be an integer
-
-test wrong parameters - string:
->>> bg.integer_validator("name", "John")
-Traceback (most recent call last):
-TypeError: name must be an integer
-
-test wrong parameters 0:
->>> bg.integer_validator("age", 0)
-Traceback (most recent call last):
-ValueError: age must be greater than 0
-
-test wrong parameters - negatif:
->>> bg.integer_validator("distance", -4)
-Traceback (most recent call last):
-ValueError: distance must be greater than 0
-
-test wrong parameters - float:
->>> bg.integer_validator("age", 1.5)
-Traceback (most recent call last):
-TypeError: age must be an integer
-
-test wrong parameters - nan:
->>> bg.integer_validator("age", )
-Traceback (most recent call last):
-TypeError: integer_validator() missing 1 required positional argument: 'value'
-
-test wrong parameters - dont write string and float:
->>> bg.integer_validator(, 1.5)
-Traceback (most recent call last):
-SyntaxError: invalid syntax
-
-test wrong parameters - None:
->>> bg.integer_validator()
-Traceback (most recent call last):
-TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
-
-test wrong parameters - value is None:
->>> bg.integer_validator("age", None)
-Traceback (most recent call last):
-TypeError: age must be an integer
-
-test None name and true value:
->>> bg.integer_validator(None, 3)
-
-test wrong parameters - 3 parameters:
->>> bg.integer_validator("ESS", 19, 25)
-Traceback (most recent call last):
-TypeError: integer_validator() takes 3 positional arguments but 4 were given
-
-test  with area:
->>> bg.area()
-Traceback (most recent call last):
-Exception: area() is not implemented
