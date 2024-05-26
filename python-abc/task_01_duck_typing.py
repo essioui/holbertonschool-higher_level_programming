@@ -26,6 +26,8 @@ class Circle(Shape):
 
     def __init__(self, radius):
         if type(radius) is int:
+            if radius < 0:
+                self.radius = radius
             self.radius = radius
 
     def area(self):
