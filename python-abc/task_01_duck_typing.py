@@ -6,7 +6,8 @@ import math
 
 class Shape(ABC):
     """
-    Shape abstract class with two methods: area and perimeter.
+    shape have two methods area and perimeter \
+    inherit from class shape.
     """
 
     @abstractmethod
@@ -20,12 +21,10 @@ class Shape(ABC):
 
 class Circle(Shape):
     """
-    Circle class inheriting from Shape and calculating radius.
+    circle inherit from shape and calcul radius
     """
 
     def __init__(self, radius):
-        if radius <= 0:
-            raise ValueError("Radius must be a positive number")
         self.radius = radius
 
     def area(self):
@@ -37,12 +36,10 @@ class Circle(Shape):
 
 class Rectangle(Shape):
     """
-    Rectangle class inheriting from Shape and defining width and height.
+    rectangle inherit from shape define width and height
     """
 
     def __init__(self, width, height):
-        if width <= 0 or height <= 0:
-            raise ValueError("Width and height must be positive numbers")
         self.width = width
         self.height = height
 
@@ -55,7 +52,7 @@ class Rectangle(Shape):
 
 def shape_info(shape):
     """
-    Print area and perimeter of the shape.
+    print area and perimeter
     """
     print(f"Area: {shape.area()}")
     print(f"Perimeter: {shape.perimeter()}")
