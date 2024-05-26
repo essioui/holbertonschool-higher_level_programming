@@ -23,9 +23,11 @@ programming
 
 test all str is dots:
 >>> text_indentation("...")
+.
 <BLANKLINE>
+.
 <BLANKLINE>
-<BLANKLINE>
+.
 <BLANKLINE>
 
 test ?:
