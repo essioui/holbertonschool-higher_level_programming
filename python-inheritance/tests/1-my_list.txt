@@ -1,51 +1,26 @@
-Module MyList
-=============
-
-Usage
------
-
-import function from Module:
-    >>> MyList = __import__('1-my_list').MyList
-
-Create an instance of MyList:
-    >>> my_list = MyList()
-    >>> my_list.print_sorted()
-    []
-
-test add elements of list:
-    >>> my_list = MyList()
-    >>> my_list.append(1)
-    >>> my_list.append(2)
-    >>> my_list.append(3)
-    >>> print(my_list)
-    [1, 2, 3]
-
-test print list sorted:
-    >>> my_list.sorted()
-    [1, 2, 3]
-
-test replace with index:
-    >>> my_list[0] = 7
-    >>> print(my_list())
-    [7, 2, 3]
-
-test remove element:
-    >>> my_list[0] = 5
-    >>> print(my_list)
-    [5, 2, 3]
-
-Test prints the list sorted unorder.
+#!/usr/bin/python3
+"""
+This module define a class Mylist that inherits from list\
+and provile a function that prints the list sorted ascendingly
+"""
 
 
-    >>> my_list.append(1)
-    >>> my_list.append(4)
-    >>> my_list.append(2)
-    >>> my_list.append(3)
-    >>> my_list.append(5)
-    >>> print(my_list)
-    [1, 4, 2, 3, 5]
+class MyList(list):
+    """
+    MyList inherits from list and provides an additional
+    method to print the list in sorted order.
+    """
+
+    def print_sorted(self):
+        """
+        Prints the list, but sorted in ascending order.
+        Assumes all elements are of type int.
+        """
+        print(sorted(self))
 
 
-    >>> my_list.print_sorted()
-    [1, 2, 3, 4, 5]
+if __name__ == "__main__":
+    import doctest
 
+    doctest.testfile("tests/1-my_list.txt")
+    
