@@ -1,30 +1,67 @@
-module text indentation
-=======================
-
-import function from the module:
-    >>> text_indentation = __import__("5-text_indentation").text_indentation
+Module prints a text with 2 new lines after each of these characters: ., ? and :
+================================================================================
 
 Usage:
-    >>> text_indentation("me: hello. how are you? she: I'm fine, thanks!.")
-    me:
-    <BLANKLINE>
-    hello.
-    <BLANKLINE>
-    how are you?
-    <BLANKLINE>
-    she:
-    <BLANKLINE>
-    I'm fine, thanks!.
-    <BLANKLINE>
+------
 
-test text not a string:
-    >>> text_indentation(12345)
-    Traceback (most recent call last):
-    TypeError: text must be a string
+import funcion from module:
+>>> text_indentation = __import__('5-text_indentation').text_indentation
 
-test with no special characters:
-    >>> text_indentation("this test has no special characters")
-    this test has no special characters
+test str with three dots:
+>>> text_indentation("""hello. world? with...programming""")
+hello.
+<BLANKLINE>
+world?
+<BLANKLINE>
+with.
+<BLANKLINE>
+.
+<BLANKLINE>
+.
+<BLANKLINE>
+programming
 
-test text empty:
-    >>> text_indentation("")
+test all str is dots:
+>>> text_indentation("...")
+.
+<BLANKLINE>
+.
+<BLANKLINE>
+.
+<BLANKLINE>
+
+test ?:
+>>> text_indentation("hello? are you: here")
+hello?
+<BLANKLINE>
+are you:
+<BLANKLINE>
+here
+
+test if not str:
+>>> text_indentation(3)
+Traceback (most recent call last):
+TypeError: text must be a string
+
+test text not have any:
+>>> text_indentation("hello world from python")
+hello world from python
+
+test None:
+>>> text_indentation(None)
+Traceback (most recent call last):
+TypeError: text must be a string
+
+test empty str:
+>>> text_indentation("")
+
+
+test holberton:
+>>> text_indentation("holberton School")
+holberton School
+
+test holberton:
+>>> text_indentation("holberton.School")
+holberton.
+<BLANKLINE>
+School
