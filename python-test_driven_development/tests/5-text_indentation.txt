@@ -9,10 +9,15 @@ import funcion from module:
 
 test str with three dots:
 >>> text_indentation("""hello. world? with...programming""")
-hello
-world
-with
+hello.
 <BLANKLINE>
+world?
+<BLANKLINE>
+with.
+<BLANKLINE>
+.
+<BLANKLINE>
+.
 <BLANKLINE>
 programming
 
