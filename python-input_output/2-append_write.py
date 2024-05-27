@@ -15,5 +15,4 @@ def append_write(filename="", text=""):
         Args:
         'a': append mode
         """
-        file.write()
-        return (len(text))
+        return (file.write(text))
