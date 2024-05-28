@@ -15,14 +15,14 @@ class Student:
             return self.__dict__
         if type(attrs) is list:
             for elements in attrs:
-                if type(elements) == str:
+                if type(elements) is str:
                     dict = self.__dict__
                     if elements in dict:
                         new_dict[elements] = dict[elements]
                 else:
                     return self.__dict__
             return new_dict
-        
+
     def reload_from_json(self, json):
         """
         Args:
