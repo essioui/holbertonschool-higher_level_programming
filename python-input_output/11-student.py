@@ -1,10 +1,9 @@
 #!/usr/bin/python3
-"""Creat new class student"""
+"""Create student class"""
 
 
 class Student:
-    """class present a student"""
-
+    """Class present a student"""
     def __init__(self, first_name, last_name, age):
         self.first_name = first_name
         self.last_name = last_name
@@ -23,3 +22,11 @@ class Student:
                 else:
                     return self.__dict__
             return new_dict
+        
+    def reload_from_json(self, json):
+        """
+        Args:
+        json (json): is file of type json
+        """
+        for key, value in json.items():
+            self.__dict__[key] = value
