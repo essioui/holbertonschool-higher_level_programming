@@ -16,7 +16,7 @@ class Student:
             return self.__dict__
         if type(attrs) is list:
             for elements in attrs:
-                if type(elements) == str:
+                if type(elements) is str:
                     dict = self.__dict__
                     if elements in dict:
                         new_dict[elements] = dict[elements]
