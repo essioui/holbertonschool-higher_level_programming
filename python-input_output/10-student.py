@@ -13,7 +13,7 @@ class Student:
     def to_json(self, attrs=None):
         new_dict = {}
         if attrs is None:
-            return (self.__dict__)
+            return self.__dict__
         if type(attrs) is list:
             for elements in attrs:
                 if type(elements) == str:
@@ -21,5 +21,5 @@ class Student:
                     if elements in dict:
                         new_dict[elements] = dict[elements]
                 else:
-                    return (self.__dict__)
-            return (new_dict)
+                    return self.__dict__
+            return new_dict
