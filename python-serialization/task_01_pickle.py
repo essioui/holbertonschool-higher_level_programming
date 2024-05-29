@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """Define module"""
 import pickle
-
+import os
 
 class CustomObject:
     """
@@ -20,8 +20,11 @@ class CustomObject:
         """
         Serialize object and save it
         """
-        with open(filename, 'wb') as file:
-            pickle.dump(self, file)
+        try:
+            with open(filename, 'wb') as file:
+                pickle.dump(self, file)
+        except Exception as e:
+            return (None)
 
     
     @classmethod
@@ -29,5 +32,10 @@ class CustomObject:
         """
         Deserialize object and load it
         """
-        with open(filename, 'rb') as file:
-            return (pickle.load(file))
+        try:
+            if not os.path.exists(filename):
+                return (None)
+            with open(filename, 'rb') as file:
+                return (pickle.load(file))
+        except Exception as e:
+            return (None)
