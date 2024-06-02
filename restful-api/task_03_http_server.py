@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+""""Define module"""
 from http.server import BaseHTTPRequestHandler, HTTPServer
 import json
 
@@ -28,6 +30,6 @@ class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
             self.wfile.write(b"Endpoint not found")
 
 if __name__ == "__main__":
-    http = HTTPServer(('', 8000), SimpleHTTPRequestHandler)
+    httpp = HTTPServer(('', 8000), SimpleHTTPRequestHandler)
     print(f"Serving on port 8000")
-    http.serve_forever()
+    httpp.serve_forever()
