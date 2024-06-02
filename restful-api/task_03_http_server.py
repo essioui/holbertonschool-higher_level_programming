@@ -26,3 +26,8 @@ class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
             self.send_header('Content-type', 'text/plain')
             self.end_headers()
             self.wfile.write(b"Endpoint not found")
+
+if __name__ == "__main__":
+    http = HTTPServer(('', 8000), SimpleHTTPRequestHandler)
+    print(f"Serving on port 8000")
+    http.serve_forever()
