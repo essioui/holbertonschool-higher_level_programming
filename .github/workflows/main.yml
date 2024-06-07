@@ -29,3 +29,5 @@ jobs:
         context: .
         push: true
         tags: ghcr.io/${{ github.repository_owner }}/extended-hello-alpine:latest
+
+        
