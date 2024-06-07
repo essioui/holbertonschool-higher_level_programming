@@ -4,4 +4,4 @@ VOLUME [ "/data" ]
 
 WORKDIR /app
 
-CMD [ "echo", "Hello, World" ]
+CMD ["/bin/sh"]
