@@ -10,7 +10,7 @@ def items():
     
     with open('items.json', 'r', encoding='utf-8') as json_file:
         data = json.load(json_file)
-        items = data['items']
+        items = data[]
     
     
     return render_template('items.html', items=items)
