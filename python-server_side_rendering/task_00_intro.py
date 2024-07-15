@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 
-def generate_invitations (template, attendees):
+def generate_invitations(template, attendees):
     if not isinstance(template, str):
         print("Error: template should be a string")
         return
@@ -15,7 +15,6 @@ def generate_invitations (template, attendees):
         return
     
     # if template and attendees are empty
-
     if not template:
         print("Error: template is empty")
         return
@@ -25,30 +24,24 @@ def generate_invitations (template, attendees):
         return
     
     # Process Each Attendee
-
     y = 1
     for attendee in attendees:
         processed_template = template
 
-    # replace the placeholders
+        # replace the placeholders
+        for key in ["name", "event_title", "event_date", "event_location"]:
+            placeholder = "{" + key + "}"
+            value = attendee.get(key, "N/A")
+            if not value:
+                value = "N/A"
+            processed_template = processed_template.replace(placeholder, value)
 
-    for  key in ["name", "event_title", "event_date", "event_location"]:
-        placeholder = "{" + key + "}"
-        value = attendee.get(key, "N/A")
+        filename = f"output_{y}.txt"
+        try:
+            with open(filename, "w") as f:
+                f.write(processed_template)
+                print(f"Invitation for {attendee.get('name', 'Unknown')} generated as {filename}.")
+        except Exception as e:
+            print(f"An error occurred while writing to {filename}: {e}")
 
-        if not value:
-            value = "N/A"
-
-        processed_template = processed_template.replace(placeholder, value)
-
-    filename = f"output_{y}.txt"
-
-    try:
-        with open(filename, "w") as f:
-            f.write(processed_template)
-            print(f"Invitation for {attendee.get('name', 'Unknown')} generated as {filename}.")
-    except Exception as e:
-        print(f"An error occurred while writing to {filename}: {e}")
-
-    y += 1
-
+        y += 1
