@@ -21,6 +21,11 @@
 
 {% block content %}
 <h1>product display</h1>
+
+{% if error %}
+<p color="red">{{ error }}</p>
+{% endif %}
+
 <table>
     <thead>
         <tr>
