@@ -48,7 +48,7 @@ def products():
     product_id = request.args.get('id', type=int)
 
     if source not in ['json', 'csv']:
-        return render_template('product_display.html', error="Wrong source. Please use 'json' or 'csv'.")
+        return render_template('product_display.html', error="Wrong source."), 400
 
     products = []
     if source == 'json':
@@ -59,9 +59,9 @@ def products():
     if product_id is not None:
         products = [product for product in products if int(product['id']) == product_id]
         if not products:
-            return render_template('product_display.html', error="Product not found.")
+            return render_template('product_display.html', error="Product not found."), 404
 
     return render_template('product_display.html', products=products)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, port=5000)
