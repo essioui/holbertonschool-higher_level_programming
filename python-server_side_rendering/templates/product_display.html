@@ -1,53 +1,65 @@
-{% extends 'base.html' %}
-
-{% block title %}product display{% endblock %}
-
-{% block style %}
-<style>
-    table {
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Display</title>
+    <style>
+      table {
         width: 100%;
         border-collapse: collapse;
-    }
-    th, td {
-        border: 1px solid #0e0d0d;
-        padding: 20px;
+      }
+      h1, p {
         text-align: center;
-    }
-    th {
-        background: rgb(102, 102, 230);
-    }
-</style>
-{% endblock %}
+        margin-top: 70px;
+      }
+      th,
+      td {
+        padding: 10px;
+        border: 1px solid #222222;
+        text-align: left;
+      }
+      th {
+        background-color: #d1c9c9;
+        text-align: center;
+      }
+      .wrong {
+        color: red;
+      }
+      .error {
+        text-align: center;
+      }
 
-{% block content %}
-<h1>product display</h1>
+    </style>
+  </head>
+  <body>
+    <h1>Product Display</h1>
 
-{% if error %}
-<p color="red">{{ error }}</p>
-{% endif %}
+    {% if error %}
+    <p class="wrong">{{ error }}</p>
+    {% endif %}
 
-<table>
-    <thead>
+    <table>
+      <thead>
         <tr>
-            <th>name</th>
-            <th>category</th>
-            <th>price</th>
+          <th>Name</th>
+          <th>Category</th>
+          <th>Price</th>
         </tr>
-    </thead>
-    <tbody>
-        {% if products %}
-            {% for product in products %}
-                <tr>
-                    <td>{{ product.name }}</td>
-                    <td>{{ product.category }}</td>
-                    <td>{{ product.price }}</td>
-                </tr>
-            {% endfor %}
-        {% else %}
-            <tr>
-                <td colspan="3">Not found products</td>
-            </tr>
+      </thead>
+      <tbody>
+        {% if products %} {% for product in products %}
+        <tr>
+          <td>{{ product.name }}</td>
+          <td>{{ product.category }}</td>
+          <td>${{ product.price }}</td>
+        </tr>
+        {% endfor %} {% else %}
+        <tr>
+          <td colspan="3" class="error">Products not available.</td>
+        </tr>
         {% endif %}
-    </tbody>
-</table>
-{% endblock %}
+      </tbody>
+    </table>
+  </body>
+</html>
